@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
+	<div class="page-background"></div>
+
 	<nav>
 		<a href="#what">что это?</a>
 		<a href="#classes">занятия</a>
@@ -158,18 +160,24 @@ import Layout from '../layouts/Layout.astro';
 		text-decoration: none;
 	}
 
-	main {
-		position: relative;
-		z-index: 1;
-		min-height: 100vh;
-		padding: 92px 40px 64px;
+	.page-background {
+		position: fixed;
+		inset: 0;
+		z-index: 0;
+		pointer-events: none;
 		background-image:
 			linear-gradient(rgb(246 239 225 / 0.18), rgb(246 239 225 / 0.18)),
 			url('./background.webp');
 		background-position: center, 50% 46%;
 		background-size: auto, 155% auto;
 		background-repeat: no-repeat;
-		background-attachment: fixed, fixed;
+	}
+
+	main {
+		position: relative;
+		z-index: 1;
+		min-height: 100vh;
+		padding: 92px 40px 64px;
 		color: #111;
 		font-family: georgia, 'times new roman', serif;
 	}
@@ -298,6 +306,11 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	@media (max-width: 760px) {
+		.page-background {
+			background-position: center, 49% 42%;
+			background-size: auto 100%;
+		}
+
 		main {
 			padding: 72px 16px 48px;
 		}
