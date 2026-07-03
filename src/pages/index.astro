@@ -1,11 +1,318 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
-	<Welcome />
+	<nav>
+		<a href="#what">что это?</a>
+		<a href="#classes">занятия</a>
+		<a href="#about">кто мы?</a>
+		<a href="#contacts">контакты</a>
+	</nav>
+
+	<main>
+		<section id="what">
+			<h2>что это?</h2>
+			<div class="text">
+				<p><span class="studio-word">студия</span> – это собственное пространство московского музыкального синдиката, наш музыкальный класс. сюда можно приходить заниматься искусством.</p>
+			</div>
+
+			<div class="cards">
+				<article>
+					<h3>что уже есть</h3>
+					<p>в студии проходят регулярные занятия с учениками, акустические репетиции, создаются проекты, проводятся лаборатории и воркшопы, музыкальные и не только</p>
+				</article>
+
+				<article>
+					<h3>что у нас можно делать</h3>
+					<p>помимо занятий с нами, мы приглашаем резидентов</p>
+					<p>глобально студия – это музыкальный класс, но не только</p>
+					<p>у нас можно проводить:</p>
+					<ul>
+						<li>индивидуальные уроки и мини-группы</li>
+						<li>акустические/полуакустические репетиции</li>
+						<li>клубы и кружки по интересам</li>
+						<li>встречи и собрания</li>
+					</ul>
+					<h3>что у нас есть:</h3>
+					<ul>
+						<li>музыкальные инструменты</li>
+						<li>звукоусиливающее оборудование: микрофоны, комбики</li>
+						<li>стол и стулья</li>
+						<li>проектор и экран</li>
+						<li>вода, чай, кофе</li>
+						<li>канцелярские принадлежности</li>
+					</ul>
+					<p>максимальное количество участников – около 10 человек</p>
+					<p>по любым вопросам пишите нам, все обсуждаемо</p>
+				</article>
+			</div>
+		</section>
+
+		<section id="classes">
+			<h2>занятия</h2>
+			<div class="text">
+				<article>
+					<h3>занятия с федей</h3>
+					<p>фортепиано, гитара, для начинающих</p>
+					<p>уроки интуитивной импровизации</p>
+					<a class="write-link" href="https://t.me/motygapishet">написать</a>
+				</article>
+				<article>
+					<h3>занятия с олей</h3>
+					<p>музыка через инструмент (фортепиано, гитара/укулеле, блокфлейта)</p>
+					<p>развитие слуха и сольфеджио для жизни</p>
+					<p>5+</p>
+					<p>3000/час</p>
+					<a class="write-link" href="https://t.me/olakotr">написать</a>
+				</article>
+				<article>
+					<h3>хор</h3>
+					<p>продолжающие, поем в меру сложно и ковыряемся в многоголосии. для тех, у кого есть похожий опыт в прошлом.</p>
+					<p>14+</p>
+					<p>1500/занятие</p>
+					<a class="write-link" href="https://t.me/olakotr">написать</a>
+				</article>
+				<article>
+					<h3>оркестр с олей</h3>
+					<p>для тех, кому нужна практика игры на своем инструменте и компания. мы играем конкретные произведения и учимся импровизировать в ансамбле</p>
+					<p>14+</p>
+					<p>1500/занятие</p>
+					<a class="write-link" href="https://t.me/olakotr">написать</a>
+				</article>
+			</div>
+		</section>
+
+		<section id="about">
+			<h2>кто мы?</h2>
+			<div class="text">
+				<p>студию делает 4 человека:</p>
+				<p>оля котрелева – музыкант (скрипка, фортепиано, аккордеон, вокал), режиссер, автор проектов, преподаватель музыки для детей и взрослых</p>
+				<p>федя фокин – музыкант, импровизатор, композитор, режиссер, артист эстрадного жанра, играю на барабанах и фортепиано</p>
+				<p>матвей соколовский – программист + бас-баритон</p>
+				<p>толя яцков</p>
+				<p>мы работаем над разным, иногда по отдельности, иногда в каких-то сочетаниях друг с другом</p>
+				<p>тут встречаются все наши проекты, которые мы делаем отдельно или вместе</p>
+				<div class="residents">
+					<h3>резиденты студии</h3>
+					<ul class="links">
+						<li><a href="https://syndikat.gastroli.moscow">московский музыкальный синдикат</a></li>
+						<li><a href="https://gastroli.moscow/">вечер танцев</a></li>
+						<li><a href="https://karaoke.gastroli.moscow">караоке с живой музыкой</a></li>
+						<li><a href="https://www.instagram.com/ylichnyj_orkestr/">уличный оркестр</a></li>
+						<li><a href="https://www.instagram.com/kin0masterskaya/">киномастерская нины смирновой</a></li>
+						<li><a href="https://www.zuyefa.ru/">zu ye fa</a></li>
+						<li><a href="https://radioznb.ru">радио зимы не будет</a></li>
+						<li><a href="https://mkeverything.ru">mkeverything</a></li>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section id="contacts">
+			<h2>контакты</h2>
+			<div class="text">
+				<p>мы находимся в москве, по адресу старая басманная 16/1</p>
+				<p>по всем вопросам звоните <a href="tel:+7963770772">+7963770772</a> или пишите <a href="https://t.me/olakotr">@olakotr</a> в телеграм</p>
+				<p><a href="https://www.instagram.com/syndikat.studio">instagram</a></p>
+			</div>
+		</section>
+	</main>
 </Layout>
+
+<style>
+	:global(html) {
+		scroll-behavior: smooth;
+		background: #e8dcc6;
+	}
+
+	:global(body) {
+		background: #e8dcc6;
+	}
+
+	nav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		display: flex;
+		justify-content: center;
+		gap: 28px;
+		z-index: 2;
+		font-size: 14px;
+	}
+
+	nav::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		backdrop-filter: blur(10px);
+		mask-image: linear-gradient(to bottom, black 0%, rgb(0 0 0 / 0.65) 45%, transparent 100%);
+	}
+
+	nav a {
+		padding: 14px 6px;
+		color: #111;
+		text-align: center;
+		text-decoration: none;
+	}
+
+	main {
+		position: relative;
+		z-index: 1;
+		min-height: 100vh;
+		padding: 92px 40px 64px;
+		background-image:
+			linear-gradient(rgb(246 239 225 / 0.18), rgb(246 239 225 / 0.18)),
+			url('/background.png');
+		background-position: center, 50% 46%;
+		background-size: auto, 155% auto;
+		background-repeat: no-repeat;
+		background-attachment: fixed, fixed;
+		color: #111;
+		font-family: georgia, 'times new roman', serif;
+	}
+
+	h2,
+	h3,
+	p,
+	ul {
+		margin-top: 0;
+	}
+
+	section {
+		max-width: 1180px;
+		margin: 0 auto 88px;
+		padding-top: 24px;
+		scroll-margin-top: 52px;
+		display: grid;
+		grid-template-columns: 220px minmax(0, 1fr);
+		gap: 32px;
+		align-items: start;
+	}
+
+	section > *:not(h2) {
+		grid-column: 2;
+	}
+
+	h2 {
+		position: sticky;
+		top: 56px;
+		font-size: 22px;
+		font-weight: 400;
+	}
+
+	h3 {
+		font-size: 19px;
+		font-weight: 400;
+		margin-bottom: 10px;
+	}
+
+	.studio-word {
+		font-size: 1.55em;
+	}
+
+	p,
+	li {
+		font-size: 19px;
+		line-height: 1.45;
+	}
+
+	.text,
+	.cards {
+		width: 100%;
+		max-width: 860px;
+	}
+
+	.text {
+		padding: 0;
+	}
+
+	.cards {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 24px;
+		align-items: start;
+	}
+
+	@media (min-width: 1120px) {
+		#what .cards {
+			grid-template-columns: minmax(260px, 0.75fr) minmax(480px, 1.25fr);
+		}
+	}
+
+	.cards article,
+	.text article,
+	.residents {
+		position: relative;
+		padding: 24px;
+		background: rgb(255 250 239 / 0.84);
+		border: 1px solid rgb(17 17 17 / 0.14);
+		box-shadow: 0 12px 40px rgb(0 0 0 / 0.12);
+	}
+
+	.residents {
+		margin-top: 24px;
+	}
+
+	#classes .text article {
+		padding-bottom: 56px;
+	}
+
+	.text article {
+		margin-top: 18px;
+	}
+
+	ul {
+		padding-left: 20px;
+	}
+
+	a {
+		color: inherit;
+	}
+
+	.write-link {
+		position: absolute;
+		right: 24px;
+		bottom: 20px;
+		font-size: 15px;
+	}
+
+	.links {
+		list-style: none;
+		padding-left: 0;
+	}
+
+	@media (min-width: 980px) {
+		#classes .text {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 18px;
+		}
+
+		#classes .text article {
+			flex: 1 1 340px;
+			margin-top: 0;
+		}
+	}
+
+	@media (max-width: 760px) {
+		main {
+			padding: 72px 16px 48px;
+		}
+
+		section,
+		.cards {
+			grid-template-columns: 1fr;
+		}
+
+		section > *:not(h2) {
+			grid-column: auto;
+		}
+
+		h2 {
+			position: static;
+		}
+	}
+</style>
