@@ -6,7 +6,7 @@ import Layout from '../layouts/Layout.astro';
 	<div class="page-background"></div>
 
 	<nav>
-		<a href="#what">студия</a>
+		<a href="#what">что это</a>
 		<a href="#classes">занятия</a>
 		<a href="#about">кто мы</a>
 		<a href="#contacts">контакты</a>
@@ -17,7 +17,7 @@ import Layout from '../layouts/Layout.astro';
 			<h2>студия</h2>
 			<div class="text">
 				<article>
-					<p>это собственное пространство московского музыкального синдиката, наш музыкальный класс. сюда можно приходить заниматься искусством.</p>
+					<p>– это собственное пространство московского музыкального синдиката, наш музыкальный класс. сюда можно приходить заниматься искусством.</p>
 				</article>
 			</div>
 
@@ -30,7 +30,7 @@ import Layout from '../layouts/Layout.astro';
 				<article>
 					<h3>что у нас можно делать</h3>
 					<p>помимо занятий с нами, мы приглашаем резидентов</p>
-					<p>глобально студия – это музыкальный класс, но не только</p>
+					<p>студия – это музыкальный класс, но не только</p>
 					<p>у нас можно проводить:</p>
 					<ul>
 						<li>индивидуальные уроки и мини-группы</li>
@@ -56,6 +56,9 @@ import Layout from '../layouts/Layout.astro';
 		<section id="classes">
 			<h2>занятия</h2>
 			<div class="text">
+				<article class="classes-intro">
+					<p>к которым можно присоединиться</p>
+				</article>
 				<article>
 					<h3>занятия с федей</h3>
 					<p>фортепиано, гитара, для начинающих</p>
@@ -94,7 +97,7 @@ import Layout from '../layouts/Layout.astro';
 			<h2>кто мы</h2>
 			<div class="text">
 				<article>
-					<p>студию делает 4 человека:</p>
+					<p><strong>студию делает 4 человека:</strong></p>
 					<p>оля котрелева – музыкант (скрипка, фортепиано, аккордеон, вокал), режиссер, автор проектов, преподаватель музыки для детей и взрослых</p>
 					<p>федя фокин – музыкант, импровизатор, композитор, режиссер, артист эстрадного жанра, играю на барабанах и фортепиано</p>
 					<p>матвей соколовский – программист + бас-баритон</p>
@@ -282,6 +285,18 @@ import Layout from '../layouts/Layout.astro';
 		padding-bottom: 56px;
 	}
 
+	#classes .text article.classes-intro {
+		padding: 8px 24px 6px;
+	}
+
+	#classes .classes-intro p {
+		margin-bottom: 0;
+	}
+
+	#classes .classes-intro + article {
+		margin-top: 8px;
+	}
+
 	.text > article:first-child {
 		margin-top: 0;
 	}
@@ -326,12 +341,16 @@ import Layout from '../layouts/Layout.astro';
 		#classes .text {
 			display: flex;
 			flex-wrap: wrap;
-			gap: 18px;
+			gap: 8px 18px;
 		}
 
 		#classes .text article {
 			flex: 1 1 340px;
 			margin-top: 0;
+		}
+
+		#classes .classes-intro {
+			flex: 1 1 100%;
 		}
 	}
 
@@ -341,12 +360,30 @@ import Layout from '../layouts/Layout.astro';
 			background-size: auto 100%;
 		}
 
+		nav {
+			gap: 14px;
+		}
+
+		nav a {
+			padding: 12px 4px;
+			font-size: 11px;
+			letter-spacing: 0.05em;
+		}
+
 		main {
 			padding: 56px 16px 48px;
 		}
 
 		#what {
 			padding-top: 0;
+		}
+
+		section {
+			gap: 10px;
+		}
+
+		section > h2 {
+			margin-bottom: 0;
 		}
 
 		section,
