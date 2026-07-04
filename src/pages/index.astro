@@ -108,7 +108,7 @@ import Layout from '../layouts/Layout.astro';
 				<div class="residents">
 					<h3>резиденты студии</h3>
 					<ul class="links">
-						<li><a href="https://syndikat.gastroli.moscow">московский музыкальный синдикат</a></li>
+						<li><a href="https://www.instagram.com/mos.muz.sin">московский музыкальный синдикат</a></li>
 						<li><a href="https://gastroli.moscow/">вечер танцев</a></li>
 						<li><a href="https://karaoke.gastroli.moscow">караоке с живой музыкой</a></li>
 						<li><a href="https://www.instagram.com/ylichnyj_orkestr/">уличный оркестр</a></li>
@@ -222,6 +222,8 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	h2 {
+		position: sticky;
+		top: 56px;
 		font-family: helvetica, arial, sans-serif;
 		font-size: 1.65rem;
 		font-weight: 600;
@@ -391,6 +393,10 @@ import Layout from '../layouts/Layout.astro';
 
 		section > *:not(h2) {
 			grid-column: auto;
+		}
+
+		h2 {
+			position: static;
 		}
 	}
 </style>
