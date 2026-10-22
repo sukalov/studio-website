@@ -45,7 +45,7 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</dialog>
 
-		<dialog class="class-modal" data-class-modal>
+		<dialog class="class-modal" data-class-modal="fedya">
 			<button type="button" class="class-modal-close" data-class-close aria-label="закрыть">×</button>
 			<div class="class-modal-body">
 				<p><strong>1. уроки свободной [спонтанной] [интуитивной] импровизации для начинающих любого возраста.</strong></p>
@@ -57,44 +57,49 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</dialog>
 
+		<dialog class="class-modal" data-class-modal="olya">
+			<button type="button" class="class-modal-close" data-class-close aria-label="закрыть">×</button>
+			<div class="class-modal-body">
+				<p>я занимаюсь с детьми с 4 лет и со взрослыми</p>
+				<p>мы учимся музыке в широком смысле слова, играем на музыкальных инструментах, экспериментируем, сочиняем.</p>
+				<p>со мной можно играть на флейте, укулеле, гитаре, фортепьяно, аккордеоне, петь.</p>
+				<p>сейчас я создаю свой музыкальный класс, в котором много инструментов и места для творческих поисков.</p>
+				<p>подробнее о том, что важно в моих занятиях музыкой описала <a href="https://t.me/olakotreleva">здесь</a></p>
+			</div>
+		</dialog>
+
 		<section id="classes">
 			<h2>занятия</h2>
 			<div class="text">
-				<article class="classes-intro">
-					<p>к которым можно присоединиться</p>
-				</article>
-				<article class="class-card-fedya">
-					<h3>занятия с федей</h3>
+				<article class="class-card">
+					<h3>занятия с федей фокиным</h3>
 					<div class="class-card-body">
-						<img src="/class-fedya.jpg" alt="занятия с федей" width="1024" height="768" loading="lazy" />
+						<img src="/class-fedya.jpg?v=4" alt="занятия с федей" width="1024" height="630" loading="lazy" />
 						<div class="class-card-text">
 							<p>фортепиано, гитара, для начинающих</p>
 							<p>уроки интуитивной импровизации</p>
 							<p>12+</p>
 							<p>3000/час</p>
-							<button type="button" class="class-more" data-class-open>подробнее</button>
+							<button type="button" class="class-more" data-class-open="fedya">подробнее</button>
+						</div>
+					</div>
+				</article>
+				<article class="class-card">
+					<h3>занятия с олей котрелевой</h3>
+					<div class="class-card-body">
+						<img src="/class-olya.jpg?v=3" alt="занятия с олей котрелевой" width="1024" height="682" loading="lazy" />
+						<div class="class-card-text">
+							<p>музыка через инструмент (фортепиано, гитара/укулеле, блокфлейта)</p>
+							<p>развитие слуха и сольфеджио для жизни</p>
+							<p>5+</p>
+							<p>3000/час</p>
+							<button type="button" class="class-more" data-class-open="olya">подробнее</button>
 						</div>
 					</div>
 				</article>
 				<article>
-					<h3>занятия с олей</h3>
-					<p>музыка через инструмент (фортепиано, гитара/укулеле, блокфлейта)</p>
-					<p>развитие слуха и сольфеджио для жизни</p>
-					<p>5+</p>
-					<p>3000/час</p>
-					<a class="more-link" href="https://t.me/olakotreleva">подробнее о практике</a>
-					<a class="write-link" href="https://t.me/olakotr">записаться</a>
-				</article>
-				<article>
 					<h3>хор</h3>
 					<p>продолжающие, поем в меру сложно и ковыряемся в многоголосии. для тех, у кого есть похожий опыт в прошлом.</p>
-					<p>14+</p>
-					<p>1500/занятие</p>
-					<a class="write-link" href="https://t.me/olakotr">записаться</a>
-				</article>
-				<article>
-					<h3>оркестр с олей</h3>
-					<p>для тех, кому нужна практика игры на своем инструменте и компания. мы играем конкретные произведения и учимся импровизировать в ансамбле</p>
 					<p>14+</p>
 					<p>1500/занятие</p>
 					<a class="write-link" href="https://t.me/olakotr">записаться</a>
@@ -110,7 +115,7 @@ import Layout from '../layouts/Layout.astro';
 						<figure class="about-slide">
 							<img src="/about-1.jpg" alt="интерьер студии" width="768" height="1024" loading="lazy" />
 							<div class="about-overlay">
-								<p>– это пространство московского музыкального синдиката. сюда можно приходить заниматься искусством.</p>
+								<p>СТУДИЯ СИНДИКАТ – это пространство московского музыкального синдиката. сюда можно приходить заниматься искусством.</p>
 							</div>
 						</figure>
 						<figure class="about-slide">
@@ -494,7 +499,7 @@ import Layout from '../layouts/Layout.astro';
 		padding-bottom: 56px;
 	}
 
-	#classes .text article.class-card-fedya {
+	#classes .text article.class-card {
 		padding: 0;
 		overflow: hidden;
 	}
@@ -511,9 +516,10 @@ import Layout from '../layouts/Layout.astro';
 		width: 100%;
 		height: 100%;
 		object-fit: cover;
+		object-position: center top;
 	}
 
-	.class-card-fedya h3 {
+	.class-card h3 {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -583,6 +589,11 @@ import Layout from '../layouts/Layout.astro';
 		margin-bottom: 0;
 	}
 
+	.class-modal-body :global(a) {
+		color: inherit;
+		text-decoration: underline;
+	}
+
 	.class-modal-close {
 		position: sticky;
 		top: 0;
@@ -596,18 +607,6 @@ import Layout from '../layouts/Layout.astro';
 		font-size: 28px;
 		line-height: 1;
 		cursor: pointer;
-	}
-
-	#classes .text article.classes-intro {
-		padding: 8px 24px 6px;
-	}
-
-	#classes .classes-intro p {
-		margin-bottom: 0;
-	}
-
-	#classes .classes-intro + article {
-		margin-top: 8px;
 	}
 
 	.text > article:first-child {
@@ -680,12 +679,8 @@ import Layout from '../layouts/Layout.astro';
 			margin-top: 0;
 		}
 
-		#classes .text article.class-card-fedya {
+		#classes .text article.class-card {
 			flex: 1 1 100%;
-		}
-
-		#classes .classes-intro {
-			display: none;
 		}
 	}
 
@@ -822,13 +817,20 @@ import Layout from '../layouts/Layout.astro';
 		});
 	}
 
-	const classModal = document.querySelector('[data-class-modal]');
-	const classOpen = document.querySelector('[data-class-open]');
-	const classClose = document.querySelector('[data-class-close]');
+	const classOpenButtons = document.querySelectorAll('[data-class-open]');
 
-	if (classModal instanceof HTMLDialogElement && classOpen && classClose) {
-		classOpen.addEventListener('click', () => classModal.showModal());
-		classClose.addEventListener('click', () => classModal.close());
+	for (const button of classOpenButtons) {
+		button.addEventListener('click', () => {
+			const id = button.getAttribute('data-class-open');
+			const classModal = document.querySelector(`[data-class-modal="${id}"]`);
+			if (classModal instanceof HTMLDialogElement) classModal.showModal();
+		});
+	}
+
+	for (const classModal of document.querySelectorAll('[data-class-modal]')) {
+		if (!(classModal instanceof HTMLDialogElement)) continue;
+		const classClose = classModal.querySelector('[data-class-close]');
+		classClose?.addEventListener('click', () => classModal.close());
 		classModal.addEventListener('click', (event) => {
 			if (event.target === classModal) classModal.close();
 		});
