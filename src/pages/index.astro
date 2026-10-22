@@ -3,55 +3,59 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	<div class="page-background"></div>
-
 	<nav>
-		<a href="#what">что это</a>
+		<a href="#events">события</a>
 		<a href="#classes">занятия</a>
-		<a href="#about">кто мы</a>
+		<a href="#about">о нас</a>
 		<a href="#contacts">контакты</a>
 	</nav>
 
 	<main>
-		<section id="what">
-			<h2>студия</h2>
-			<div class="text">
-				<article>
-					<p>– это собственное пространство московского музыкального синдиката, наш музыкальный класс. сюда можно приходить заниматься искусством.</p>
-				</article>
-			</div>
-
-			<div class="cards">
-				<article>
-					<h3>что уже есть</h3>
-					<p>в студии проходят регулярные занятия с учениками, акустические репетиции, создаются проекты, проводятся лаборатории и воркшопы, музыкальные и не только</p>
-				</article>
-
-				<article>
-					<h3>что у нас можно делать</h3>
-					<p>помимо занятий с нами, мы приглашаем резидентов</p>
-					<p>студия – это музыкальный класс, но не только</p>
-					<p>у нас можно проводить:</p>
-					<ul>
-						<li>индивидуальные уроки и мини-группы</li>
-						<li>акустические/полуакустические репетиции</li>
-						<li>клубы и кружки по интересам</li>
-						<li>встречи и собрания</li>
-					</ul>
-					<h3>что у нас есть:</h3>
-					<ul>
-						<li>музыкальные инструменты</li>
-						<li>звукоусиливающее оборудование: микрофоны, комбики</li>
-						<li>стол и стулья</li>
-						<li>проектор и экран</li>
-						<li>вода, чай, кофе</li>
-						<li>канцелярские принадлежности</li>
-					</ul>
-					<p>максимальное количество участников – около 10 человек</p>
-					<p>по любым вопросам пишите нам, все обсуждаемо</p>
-				</article>
+		<section id="events">
+			<h2>события</h2>
+			<div class="text events-list">
+				<button
+					type="button"
+					class="event-row"
+					data-event-open
+					data-poster="/event-suicide.png"
+					data-poster-alt="театральный клуб — самоубийца"
+					data-caption='читаем по ролям пьесу «самоубийца» н. эрдмана. <a href="https://t.me/syndicat_studio/45">подробнее</a>'
+				>
+					<span><span class="event-date">27.10 20:00</span> - театральный клуб. вход свободный</span>
+				</button>
+				<button
+					type="button"
+					class="event-row"
+					data-event-open
+					data-poster="/event-swim.jpg"
+					data-poster-alt="заплыв с лизой плавинской"
+					data-caption="лекция заслуженной работницы радио зимы не будет о фарфоре и морях"
+				>
+					<span><span class="event-date">1.11 20:00</span> - заплыв с лизой плавинской</span>
+				</button>
 			</div>
 		</section>
+
+		<dialog class="event-modal" data-event-modal>
+			<button type="button" class="event-modal-close" data-event-close aria-label="закрыть">×</button>
+			<div class="event-modal-poster">
+				<img data-event-image src="" alt="" width="819" height="1024" />
+				<p class="event-modal-caption" data-event-caption></p>
+			</div>
+		</dialog>
+
+		<dialog class="class-modal" data-class-modal>
+			<button type="button" class="class-modal-close" data-class-close aria-label="закрыть">×</button>
+			<div class="class-modal-body">
+				<p><strong>1. уроки свободной [спонтанной] [интуитивной] импровизации для начинающих любого возраста.</strong></p>
+				<p>для тех кто никогда не занимался музыкой и хочет начать, свободная импровизация это хороший способ познакомиться с инструментом и с музыкой в целом. для тех кто занимается музыкой, но чувствует, что чего-то не хватает, свободная импровизация это возможность расширить музыкальное сознание и посмотреть на музыку с другой стороны.</p>
+				<p><strong>2. пианино, гитара (и др.) для начинающих</strong></p>
+				<p>помогу научиться играть на пианино по нотам и на гитаре по аккордам или табам, натренироваться в подборе песен, развить слух и чувство ритма.</p>
+				<p>я не поклонник особо системного подхода к изучению инструмента, бывает импровизирую в составлении плана занятия, но всегда стараюсь учесть запрос ученика и чтоб ему было интересно и комфортно.</p>
+				<p>я за удовольствие от творчества, иначе непонятно куда зачем.</p>
+			</div>
+		</dialog>
 
 		<section id="classes">
 			<h2>занятия</h2>
@@ -59,13 +63,18 @@ import Layout from '../layouts/Layout.astro';
 				<article class="classes-intro">
 					<p>к которым можно присоединиться</p>
 				</article>
-				<article>
+				<article class="class-card-fedya">
 					<h3>занятия с федей</h3>
-					<p>фортепиано, гитара, для начинающих</p>
-					<p>уроки интуитивной импровизации</p>
-					<p>12+</p>
-					<p>3000/час</p>
-					<a class="write-link" href="https://t.me/motygapishet">записаться</a>
+					<div class="class-card-body">
+						<img src="/class-fedya.jpg" alt="занятия с федей" width="1024" height="768" loading="lazy" />
+						<div class="class-card-text">
+							<p>фортепиано, гитара, для начинающих</p>
+							<p>уроки интуитивной импровизации</p>
+							<p>12+</p>
+							<p>3000/час</p>
+							<button type="button" class="class-more" data-class-open>подробнее</button>
+						</div>
+					</div>
 				</article>
 				<article>
 					<h3>занятия с олей</h3>
@@ -94,16 +103,26 @@ import Layout from '../layouts/Layout.astro';
 		</section>
 
 		<section id="about">
-			<h2>кто мы</h2>
+			<h2>о нас</h2>
 			<div class="text">
-				<article>
-					<p><strong>студию делает 4 человека:</strong></p>
-					<p>оля котрелева – музыкант (скрипка, фортепиано, аккордеон, вокал), режиссер, автор проектов, преподаватель музыки для детей и взрослых</p>
-					<p>федя фокин – музыкант, импровизатор, композитор, режиссер, артист эстрадного жанра, играю на барабанах и фортепиано</p>
-					<p>матвей соколовский – программист + бас-баритон</p>
-					<p>толя яцков</p>
-					<p>мы работаем над разным, иногда по отдельности, иногда в каких-то сочетаниях друг с другом</p>
-					<p>тут встречаются все наши проекты, которые мы делаем отдельно или вместе</p>
+				<div class="about-carousel-wrap">
+					<div class="about-carousel" data-about-carousel>
+						<figure class="about-slide">
+							<img src="/about-1.jpg" alt="интерьер студии" width="768" height="1024" loading="lazy" />
+							<div class="about-overlay">
+								<p>– это пространство московского музыкального синдиката. сюда можно приходить заниматься искусством.</p>
+							</div>
+						</figure>
+						<figure class="about-slide">
+							<img src="/about-2.jpg" alt="вход в студию" width="768" height="1024" loading="lazy" />
+						</figure>
+					</div>
+					<div class="about-dots" data-about-dots aria-hidden="true"></div>
+					<button type="button" class="about-prev" data-about-prev aria-label="предыдущее фото" hidden>←</button>
+					<button type="button" class="about-next" data-about-next aria-label="следующее фото">→</button>
+				</div>
+				<article class="about-more">
+					<p>в студии проходят регулярные занятия с учениками, акустические репетиции, создаются проекты, проводятся лаборатории и воркшопы, музыкальные и не только</p>
 				</article>
 				<div class="residents">
 					<h3>резиденты студии</h3>
@@ -126,9 +145,18 @@ import Layout from '../layouts/Layout.astro';
 			<div class="text">
 				<article>
 					<p>мы находимся в москве, по адресу старая басманная 16/1</p>
-					<p>по всем вопросам звоните <a href="tel:+79637707769">+79637707769</a> или пишите <a href="https://t.me/olakotr">@olakotr</a> в телеграм</p>
+					<p>по всем вопросам пишите в сообщение тг-канала или в инстаграм</p>
+					<p><a href="https://t.me/syndicat_studio">телеграм канал</a></p>
 					<p><a href="https://www.instagram.com/syndikat.studio">instagram</a></p>
 				</article>
+			</div>
+			<div class="map">
+				<iframe
+					src="https://yandex.ru/map-widget/v1/-/CXRcA48F"
+					title="студия на карте"
+					loading="lazy"
+					allowfullscreen
+				></iframe>
 			</div>
 		</section>
 	</main>
@@ -137,11 +165,11 @@ import Layout from '../layouts/Layout.astro';
 <style>
 	:global(html) {
 		scroll-behavior: smooth;
-		background: #e8dcc6;
+		background: #fae4d4;
 	}
 
 	:global(body) {
-		background: #e8dcc6;
+		background: #fae4d4;
 	}
 
 	nav {
@@ -175,19 +203,6 @@ import Layout from '../layouts/Layout.astro';
 		font-weight: 600;
 		letter-spacing: 0.06em;
 		text-transform: uppercase;
-	}
-
-	.page-background {
-		position: fixed;
-		inset: 0;
-		z-index: 0;
-		pointer-events: none;
-		background-image:
-			linear-gradient(rgb(246 239 225 / 0.18), rgb(246 239 225 / 0.18)),
-			url('/background.webp');
-		background-position: center, 50% 46%;
-		background-size: auto, 155% auto;
-		background-repeat: no-repeat;
 	}
 
 	main {
@@ -244,30 +259,117 @@ import Layout from '../layouts/Layout.astro';
 		line-height: 1.45;
 	}
 
-	.text,
-	.cards {
+	.text {
 		width: 100%;
 		max-width: 860px;
-	}
-
-	.text {
 		padding: 0;
 	}
 
-	.cards {
-		display: grid;
-		grid-template-columns: 1fr;
-		gap: 24px;
-		align-items: start;
+	.events-list {
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
 	}
 
-	@media (min-width: 1120px) {
-		#what .cards {
-			grid-template-columns: minmax(260px, 0.75fr) minmax(480px, 1.25fr);
-		}
+	.event-row {
+		display: flex;
+		align-items: baseline;
+		justify-content: space-between;
+		gap: 16px;
+		width: 100%;
+		padding: 18px 20px;
+		margin: 0;
+		border: 1px solid rgb(17 17 17 / 0.14);
+		background: rgb(255 250 239 / 0.84);
+		box-shadow: 0 12px 40px rgb(0 0 0 / 0.12);
+		color: inherit;
+		font-family: georgia, 'times new roman', serif;
+		font-size: 19px;
+		font-weight: 400;
+		line-height: 1.35;
+		text-align: left;
+		text-decoration: none;
+		cursor: pointer;
 	}
 
-	.cards article,
+	.event-row > span {
+		text-decoration: underline;
+		text-underline-offset: 0.18em;
+	}
+
+	.event-date {
+		font-family: georgia, 'times new roman', serif;
+		font-size: 1.5em;
+		font-weight: 400;
+		font-style: italic;
+	}
+
+	.event-row::after {
+		content: '→';
+		flex: 0 0 auto;
+	}
+
+	.event-row:hover {
+		background: rgb(255 250 239 / 0.96);
+	}
+
+	.event-modal {
+		position: relative;
+		padding: 0;
+		border: none;
+		background: transparent;
+		max-width: min(92vw, 420px);
+		max-height: 92vh;
+	}
+
+	.event-modal::backdrop {
+		background: rgb(0 0 0 / 0.72);
+	}
+
+	.event-modal-poster {
+		position: relative;
+		background: #2f3d55;
+	}
+
+	.event-modal-poster img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	.event-modal-caption {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		margin: 0;
+		padding: 16px 18px;
+		background: rgb(0 0 0 / 0.72);
+		color: #fff;
+		font-size: 16px;
+		line-height: 1.4;
+	}
+
+	.event-modal-caption :global(a) {
+		color: #fff;
+		text-decoration: underline;
+	}
+
+	.event-modal-close {
+		position: absolute;
+		top: 8px;
+		right: 10px;
+		z-index: 1;
+		margin: 0;
+		padding: 0;
+		border: none;
+		background: transparent;
+		color: #fff;
+		font-size: 28px;
+		line-height: 1;
+		cursor: pointer;
+	}
+
 	.text article,
 	.residents {
 		position: relative;
@@ -277,12 +379,223 @@ import Layout from '../layouts/Layout.astro';
 		box-shadow: 0 12px 40px rgb(0 0 0 / 0.12);
 	}
 
+	.about-carousel-wrap {
+		position: relative;
+		width: 100%;
+		border: 1px solid rgb(17 17 17 / 0.14);
+		box-shadow: 0 12px 40px rgb(0 0 0 / 0.12);
+		overflow: hidden;
+	}
+
+	.about-carousel {
+		display: flex;
+		overflow-x: auto;
+		scroll-snap-type: x mandatory;
+		scroll-behavior: smooth;
+		-webkit-overflow-scrolling: touch;
+		scrollbar-width: none;
+	}
+
+	.about-carousel::-webkit-scrollbar {
+		display: none;
+	}
+
+	.about-slide {
+		position: relative;
+		flex: 0 0 100%;
+		margin: 0;
+		scroll-snap-align: start;
+	}
+
+	.about-slide img {
+		display: block;
+		width: 100%;
+		height: auto;
+	}
+
+	.about-overlay {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		padding: 20px;
+		background: rgb(0 0 0 / 0.45);
+		color: #fff;
+	}
+
+	.about-overlay p {
+		margin: 0;
+		color: #fff;
+	}
+
+	.about-dots {
+		position: absolute;
+		top: 12px;
+		left: 0;
+		right: 0;
+		display: flex;
+		justify-content: center;
+		gap: 6px;
+		pointer-events: none;
+	}
+
+	.about-dot {
+		width: 6px;
+		height: 6px;
+		border-radius: 50%;
+		background: rgb(255 255 255 / 0.45);
+	}
+
+	.about-dot.is-active {
+		background: #fff;
+	}
+
+	.about-prev,
+	.about-next {
+		position: absolute;
+		top: 50%;
+		z-index: 1;
+		transform: translateY(-50%);
+		width: 36px;
+		height: 36px;
+		margin: 0;
+		padding: 0;
+		border: none;
+		border-radius: 50%;
+		background: rgb(0 0 0 / 0.4);
+		color: #fff;
+		font-size: 18px;
+		line-height: 1;
+		cursor: pointer;
+	}
+
+	.about-prev {
+		left: 10px;
+	}
+
+	.about-next {
+		right: 10px;
+	}
+
+	.about-prev:hover,
+	.about-next:hover {
+		background: rgb(0 0 0 / 0.55);
+	}
+
+	.about-more {
+		margin-top: 18px;
+	}
+
 	.residents {
 		margin-top: 24px;
 	}
 
 	#classes .text article {
 		padding-bottom: 56px;
+	}
+
+	#classes .text article.class-card-fedya {
+		padding: 0;
+		overflow: hidden;
+	}
+
+	.class-card-body {
+		display: grid;
+		grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+		align-items: stretch;
+		min-height: 280px;
+	}
+
+	.class-card-body img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.class-card-fedya h3 {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1;
+		margin: 0;
+		padding: 14px 20px;
+		background: rgb(0 0 0 / 0.45);
+		color: #fff;
+	}
+
+	.class-card-text {
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+		padding: 64px 20px 20px;
+	}
+
+	.class-card-text p {
+		margin-bottom: 0.4em;
+	}
+
+	.class-card-text p:last-of-type {
+		margin-bottom: 14px;
+	}
+
+	.class-more {
+		align-self: flex-start;
+		margin: 0;
+		padding: 0;
+		border: none;
+		background: none;
+		color: inherit;
+		font: inherit;
+		font-size: 15px;
+		text-decoration: underline;
+		text-underline-offset: 0.18em;
+		cursor: pointer;
+	}
+
+	.class-modal {
+		width: min(92vw, 560px);
+		max-height: 85vh;
+		padding: 0;
+		border: none;
+		background: rgb(255 250 239);
+		box-shadow: 0 12px 40px rgb(0 0 0 / 0.24);
+	}
+
+	.class-modal::backdrop {
+		background: rgb(0 0 0 / 0.72);
+	}
+
+	.class-modal-body {
+		padding: 28px 24px 24px;
+		overflow: auto;
+		max-height: 85vh;
+		font-size: 19px;
+		line-height: 1.45;
+	}
+
+	.class-modal-body p {
+		margin: 0 0 1em;
+	}
+
+	.class-modal-body p:last-child {
+		margin-bottom: 0;
+	}
+
+	.class-modal-close {
+		position: sticky;
+		top: 0;
+		float: right;
+		z-index: 1;
+		margin: 8px 10px 0 0;
+		padding: 0;
+		border: none;
+		background: transparent;
+		color: #111;
+		font-size: 28px;
+		line-height: 1;
+		cursor: pointer;
 	}
 
 	#classes .text article.classes-intro {
@@ -337,6 +650,24 @@ import Layout from '../layouts/Layout.astro';
 		padding-left: 0;
 	}
 
+	.map {
+		grid-column: 2;
+		width: 100%;
+		max-width: 860px;
+		margin-top: 8px;
+		aspect-ratio: 16 / 10;
+		overflow: hidden;
+		border: 1px solid rgb(17 17 17 / 0.14);
+		box-shadow: 0 12px 40px rgb(0 0 0 / 0.12);
+	}
+
+	.map iframe {
+		display: block;
+		width: 100%;
+		height: 100%;
+		border: 0;
+	}
+
 	@media (min-width: 980px) {
 		#classes .text {
 			display: flex;
@@ -349,17 +680,16 @@ import Layout from '../layouts/Layout.astro';
 			margin-top: 0;
 		}
 
+		#classes .text article.class-card-fedya {
+			flex: 1 1 100%;
+		}
+
 		#classes .classes-intro {
 			display: none;
 		}
 	}
 
 	@media (max-width: 760px) {
-		.page-background {
-			background-position: center, 49% 42%;
-			background-size: auto 100%;
-		}
-
 		nav {
 			gap: 14px;
 		}
@@ -374,7 +704,7 @@ import Layout from '../layouts/Layout.astro';
 			padding: 56px 16px 48px;
 		}
 
-		#what {
+		#events {
 			padding-top: 0;
 		}
 
@@ -386,8 +716,7 @@ import Layout from '../layouts/Layout.astro';
 			margin-bottom: 0;
 		}
 
-		section,
-		.cards {
+		section {
 			grid-template-columns: 1fr;
 		}
 
@@ -398,5 +727,110 @@ import Layout from '../layouts/Layout.astro';
 		h2 {
 			position: static;
 		}
+
+		.class-card-body {
+			grid-template-columns: 1fr;
+		}
+
+		.class-card-body img {
+			aspect-ratio: 4 / 3;
+			height: auto;
+			max-height: 260px;
+		}
+
+		.class-card-text {
+			padding-top: 20px;
+		}
 	}
 </style>
+
+<script>
+	const aboutCarousel = document.querySelector('[data-about-carousel]');
+	const aboutDots = document.querySelector('[data-about-dots]');
+
+	if (aboutCarousel instanceof HTMLElement && aboutDots instanceof HTMLElement) {
+		const slides = [...aboutCarousel.querySelectorAll('.about-slide')];
+		const prevButton = document.querySelector('[data-about-prev]');
+		const nextButton = document.querySelector('[data-about-next]');
+
+		aboutDots.replaceChildren(
+			...slides.map((_, index) => {
+				const dot = document.createElement('span');
+				dot.className = index === 0 ? 'about-dot is-active' : 'about-dot';
+				return dot;
+			}),
+		);
+
+		const currentIndex = () =>
+			Math.round(aboutCarousel.scrollLeft / Math.max(aboutCarousel.clientWidth, 1));
+
+		const updateControls = () => {
+			const index = currentIndex();
+			[...aboutDots.children].forEach((dot, i) => {
+				dot.classList.toggle('is-active', i === index);
+			});
+			if (prevButton instanceof HTMLElement) {
+				prevButton.hidden = index <= 0;
+			}
+			if (nextButton instanceof HTMLElement) {
+				nextButton.hidden = index >= slides.length - 1;
+			}
+		};
+
+		aboutCarousel.addEventListener('scroll', updateControls);
+
+		if (prevButton instanceof HTMLElement) {
+			prevButton.addEventListener('click', () => {
+				aboutCarousel.scrollBy({ left: -aboutCarousel.clientWidth, behavior: 'smooth' });
+			});
+		}
+
+		if (nextButton instanceof HTMLElement) {
+			nextButton.addEventListener('click', () => {
+				aboutCarousel.scrollBy({ left: aboutCarousel.clientWidth, behavior: 'smooth' });
+			});
+		}
+	}
+
+	const modal = document.querySelector('[data-event-modal]');
+	const image = document.querySelector('[data-event-image]');
+	const caption = document.querySelector('[data-event-caption]');
+	const openButtons = document.querySelectorAll('[data-event-open]');
+	const closeButton = document.querySelector('[data-event-close]');
+
+	if (
+		modal instanceof HTMLDialogElement &&
+		image instanceof HTMLImageElement &&
+		caption instanceof HTMLElement &&
+		closeButton
+	) {
+		for (const button of openButtons) {
+			button.addEventListener('click', () => {
+				const poster = button.getAttribute('data-poster') ?? '';
+				const alt = button.getAttribute('data-poster-alt') ?? '';
+				const text = button.getAttribute('data-caption') ?? '';
+				image.src = poster;
+				image.alt = alt;
+				caption.innerHTML = text;
+				modal.showModal();
+			});
+		}
+
+		closeButton.addEventListener('click', () => modal.close());
+		modal.addEventListener('click', (event) => {
+			if (event.target === modal) modal.close();
+		});
+	}
+
+	const classModal = document.querySelector('[data-class-modal]');
+	const classOpen = document.querySelector('[data-class-open]');
+	const classClose = document.querySelector('[data-class-close]');
+
+	if (classModal instanceof HTMLDialogElement && classOpen && classClose) {
+		classOpen.addEventListener('click', () => classModal.showModal());
+		classClose.addEventListener('click', () => classModal.close());
+		classModal.addEventListener('click', (event) => {
+			if (event.target === classModal) classModal.close();
+		});
+	}
+</script>
