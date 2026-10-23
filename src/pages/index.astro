@@ -14,34 +14,107 @@ import Layout from '../layouts/Layout.astro';
 		<section id="events">
 			<h2>события</h2>
 			<div class="text events-list">
-				<button
-					type="button"
-					class="event-row"
-					data-event-open
-					data-poster="/event-suicide.png"
-					data-poster-alt="театральный клуб — самоубийца"
-					data-caption='читаем по ролям пьесу «самоубийца» н. эрдмана. <a href="https://t.me/syndicat_studio/45">подробнее</a>'
-				>
-					<span><span class="event-date">27.10 20:00</span> - театральный клуб. вход свободный</span>
-				</button>
-				<button
-					type="button"
-					class="event-row"
-					data-event-open
-					data-poster="/event-swim.jpg"
-					data-poster-alt="заплыв с лизой плавинской"
-					data-caption="лекция заслуженной работницы радио зимы не будет о фарфоре и морях"
-				>
-					<span><span class="event-date">1.11 20:00</span> - заплыв с лизой плавинской</span>
-				</button>
+				<div class="event-item" data-event-until="2026-10-28">
+					<button
+						type="button"
+						class="event-hit"
+						data-event-open
+						data-poster="/event-suicide.png"
+						data-poster-alt="театральный клуб — самоубийца"
+						data-caption='читаем по ролям пьесу «самоубийца» н. эрдмана. <a href="https://t.me/syndicat_studio/45">подробнее</a>'
+						aria-label="театральный клуб"
+					></button>
+					<span class="event-title-line"><span class="event-date">27.10 20:00</span> - театральный клуб</span>
+					<span class="event-arrow" aria-hidden="true">→</span>
+					<span class="event-meta">вход свободный</span>
+				</div>
+				<div class="event-item" data-event-until="2026-11-01">
+					<button
+						type="button"
+						class="event-hit"
+						data-event-open
+						data-poster="/event-scenario-1.jpg"
+						data-poster-alt="сценарная мастерская нины смирновой"
+						data-caption-ref="event-scenario-caption"
+						aria-label="сценарная мастерская нины смирновой"
+					></button>
+					<span class="event-title-line"><span class="event-date">31.10</span> - сценарная мастерская нины смирновой, старт курса</span>
+					<span class="event-arrow" aria-hidden="true">→</span>
+					<a class="event-tickets" href="https://t.me/never_ending_adventure">запись</a>
+				</div>
+				<div class="event-item" data-event-until="2026-11-02">
+					<button
+						type="button"
+						class="event-hit"
+						data-event-open
+						data-poster="/event-swim.jpg?v=2"
+						data-poster-alt="заплыв с лизой плавинской"
+						data-caption-ref="event-swim-caption"
+						aria-label="заплыв с лизой плавинской"
+					></button>
+					<span class="event-title-line"><span class="event-date">1.11 20:00</span> - заплыв с лизой плавинской</span>
+					<span class="event-arrow" aria-hidden="true">→</span>
+					<a class="event-tickets" href="https://qtickets.ru/event/268742">билеты</a>
+				</div>
+				<template id="event-scenario-caption">
+					<p>
+						курс посвящён сценарной части кинопроцесса. придумыванию идей, подмечанию сюжетов,
+						разработке персонажей, написанию диалогов. на мастерской вы сможете придумать сценарий с
+						нуля или доработать идею, которая уже живёт у вас в голове.
+					</p>
+					<p>что будем делать:</p>
+					<ul>
+						<li>вести дневник наблюдений</li>
+						<li>выполнять писательские задания</li>
+						<li>разрабатывать сюжеты</li>
+						<li>придумывать героев для своей истории</li>
+						<li>обсуждать идеи друг друга</li>
+					</ul>
+					<p>
+						итогом мастерской станет ваш готовый короткометражный сценарий. а в разгоне фантазии для
+						его написания помогут разные упражнения и обсуждения мыслей в кругу участников.
+					</p>
+					<p>опыт в кино и писательстве не обязателен. мастерская открыта для всех!</p>
+					<p>
+						ведущая нина смирнова — сценарист, закончила сценарную мастерскую вгика бородянского в
+						2019 году. с 2022 года ведёт авторские киномастерские для взрослых и детей. работает
+						сценаристом на фрилансе и на тв (проекты на канале «пятый» и «домашний»). пишет сценарии
+						для компьютерных игр. ведёт мастерские в детской арт-резиденции «кавардак». снимает
+						игровое, документальное и экспериментальное кино
+					</p>
+					<p>7 занятий</p>
+					<p>суббота с 18:30 до 21:30</p>
+					<p>старт 31 октября</p>
+					<p>стоимость курса 10500 руб</p>
+					<p>
+						<a class="event-tickets" href="https://t.me/never_ending_adventure">запись</a>
+					</p>
+				</template>
+				<template id="event-swim-caption">
+					<p>1 ноября первый заплыв с лизой плавинской в студии!</p>
+					<p>заплыв с лизой плавинской - это легендарная передача радио зимы не будет, теперь и наконец-то живьем в студии!</p>
+					<p>две темы на этот раз -</p>
+					<p>тема №1 морская история о том, что не весь фарфор на белом свете придумали китайцы</p>
+					<p>во второй теме - фантастический триллер из далёких времён, как одно море случайно съело другое море, а вместе с ним и цивилизацию каких-то красавцев</p>
+					<p>это не лекция, это именно заплыв в историю культуры и человечества с разных моментов и на разную глубину и длинну, получается такой большой разговор, вопросы и рассуждения, переплетения историй, неожиданные развороты.</p>
+					<p>лиза плавинская не только наша любимая ведущая, но еще и искусствовед, галерист, куратор выставок и всё такое из мира искусства</p>
+					<p>приходите все увидеться лично, задать сто вопросов</p>
+					<p>начало в 20:00</p>
+					<p>буль буль буль</p>
+					<p>«короче слезаем с верблюда и пересаживаемся на корабль»</p>
+					<p><a class="event-tickets" href="https://qtickets.ru/event/268742">билеты</a></p>
+				</template>
 			</div>
 		</section>
 
 		<dialog class="event-modal" data-event-modal>
 			<button type="button" class="event-modal-close" data-event-close aria-label="закрыть">×</button>
 			<div class="event-modal-poster">
-				<img data-event-image src="" alt="" width="819" height="1024" />
-				<p class="event-modal-caption" data-event-caption></p>
+				<img data-event-image src="" alt="" width="1024" height="951" />
+				<div class="event-modal-scroll" data-event-scroll>
+					<div class="event-modal-spacer" aria-hidden="true"></div>
+					<div class="event-modal-caption" data-event-caption></div>
+				</div>
 			</div>
 		</dialog>
 
@@ -165,9 +238,17 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</section>
 	</main>
+	<footer class="font-credit">шрифт сделала аня иткина</footer>
 </Layout>
 
 <style>
+@font-face {
+		font-family: 'radioanya';
+		src: url('/fonts/radioanya.otf') format('opentype');
+		font-weight: normal;
+		font-style: normal;
+		font-display: swap;
+	}
 	:global(html) {
 		scroll-behavior: smooth;
 		background: #fae4d4;
@@ -203,9 +284,9 @@ import Layout from '../layouts/Layout.astro';
 		color: #111;
 		text-align: center;
 		text-decoration: none;
-		font-family: helvetica, arial, sans-serif;
-		font-size: 13px;
-		font-weight: 600;
+		font-family: 'radioanya', georgia, 'times new roman', serif;
+		font-size: calc(13px + 3pt);
+		font-weight: 400;
 		letter-spacing: 0.06em;
 		text-transform: uppercase;
 	}
@@ -244,18 +325,25 @@ import Layout from '../layouts/Layout.astro';
 	h2 {
 		position: sticky;
 		top: 56px;
-		font-family: helvetica, arial, sans-serif;
-		font-size: 1.65rem;
-		font-weight: 600;
+		font-family: 'radioanya', georgia, 'times new roman', serif;
+		font-size: calc(1.65rem + 3pt);
+		font-weight: 400;
 		line-height: 1.05;
 		letter-spacing: 0.03em;
 		text-transform: uppercase;
 	}
 
 	h3 {
+		font-family: 'radioanya', georgia, 'times new roman', serif;
+		font-size: calc(19px + 3pt);
+		font-weight: 400;
+		margin-bottom: 10px;
+	}
+
+	.residents h3 {
+		font-family: georgia, 'times new roman', serif;
 		font-size: 19px;
 		font-weight: 700;
-		margin-bottom: 10px;
 	}
 
 	p,
@@ -276,46 +364,93 @@ import Layout from '../layouts/Layout.astro';
 		gap: 12px;
 	}
 
-	.event-row {
-		display: flex;
-		align-items: baseline;
-		justify-content: space-between;
-		gap: 16px;
-		width: 100%;
+	.event-item {
+		position: relative;
+		display: grid;
+		grid-template-columns: minmax(0, 1fr) auto;
+		column-gap: 16px;
+		row-gap: 4px;
 		padding: 18px 20px;
-		margin: 0;
 		border: 1px solid rgb(17 17 17 / 0.14);
 		background: rgb(255 250 239 / 0.84);
 		box-shadow: 0 12px 40px rgb(0 0 0 / 0.12);
-		color: inherit;
 		font-family: georgia, 'times new roman', serif;
 		font-size: 19px;
 		font-weight: 400;
 		line-height: 1.35;
-		text-align: left;
-		text-decoration: none;
+	}
+
+	.event-item:hover {
+		background: rgb(255 250 239 / 0.96);
+	}
+
+	.event-hit {
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		padding: 0;
+		margin: 0;
+		border: none;
+		background: transparent;
 		cursor: pointer;
 	}
 
-	.event-row > span {
+	.event-title-line,
+	.event-arrow,
+	.event-meta {
+		position: relative;
+		z-index: 1;
+		pointer-events: none;
+	}
+
+	.event-title-line {
+		grid-column: 1;
+		grid-row: 1;
+		min-width: 0;
+		text-decoration: underline;
+		text-underline-offset: 0.18em;
+	}
+
+	.event-arrow {
+		grid-column: 2;
+		grid-row: 1;
+	}
+
+	.event-meta,
+	.event-tickets {
+		grid-column: 1;
+		grid-row: 2;
+		color: inherit;
+		font-family: inherit;
+		font-size: inherit;
+		line-height: inherit;
+	}
+
+	.event-tickets {
+		position: relative;
+		z-index: 2;
 		text-decoration: underline;
 		text-underline-offset: 0.18em;
 	}
 
 	.event-date {
-		font-family: georgia, 'times new roman', serif;
-		font-size: 1.5em;
+		font-family: 'radioanya', georgia, 'times new roman', serif;
+		font-size: calc(1.5em + 3pt);
 		font-weight: 400;
-		font-style: italic;
+		font-style: normal;
 	}
 
-	.event-row::after {
-		content: '→';
-		flex: 0 0 auto;
-	}
-
-	.event-row:hover {
-		background: rgb(255 250 239 / 0.96);
+	.font-credit {
+		position: relative;
+		z-index: 1;
+		margin: 0;
+		padding: 0 40px 28px;
+		color: #111;
+		font-family: 'radioanya', georgia, 'times new roman', serif;
+		font-size: 12px;
+		font-weight: 400;
+		line-height: 1.3;
+		text-align: center;
 	}
 
 	.event-modal {
@@ -342,17 +477,45 @@ import Layout from '../layouts/Layout.astro';
 		height: auto;
 	}
 
-	.event-modal-caption {
+	.event-modal-scroll {
 		position: absolute;
-		left: 0;
-		right: 0;
-		bottom: 0;
+		inset: 0;
+		overflow-y: auto;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.event-modal-spacer {
+		height: 75%;
+		pointer-events: none;
+	}
+
+	.event-modal-caption {
 		margin: 0;
 		padding: 16px 18px;
-		background: rgb(0 0 0 / 0.72);
+		min-height: 100%;
+		box-sizing: border-box;
+		background: rgb(0 0 0 / 0.78);
 		color: #fff;
-		font-size: 16px;
+		font-size: 15px;
 		line-height: 1.4;
+	}
+
+	.event-modal-caption :global(p),
+	.event-modal-caption :global(ul) {
+		margin: 0 0 0.7em;
+	}
+
+	.event-modal-caption :global(p:last-child),
+	.event-modal-caption :global(ul:last-child) {
+		margin-bottom: 0;
+	}
+
+	.event-modal-caption :global(ul) {
+		padding-left: 1.2em;
+	}
+
+	.event-modal-caption :global(li) {
+		margin: 0 0 0.25em;
 	}
 
 	.event-modal-caption :global(a) {
@@ -691,12 +854,16 @@ import Layout from '../layouts/Layout.astro';
 
 		nav a {
 			padding: 12px 4px;
-			font-size: 11px;
+			font-size: calc(11px + 3pt);
 			letter-spacing: 0.05em;
 		}
 
 		main {
 			padding: 56px 16px 48px;
+		}
+
+		.font-credit {
+			padding: 0 16px 20px;
 		}
 
 		#events {
@@ -787,9 +954,28 @@ import Layout from '../layouts/Layout.astro';
 		}
 	}
 
+	const today = new Date();
+	today.setHours(0, 0, 0, 0);
+
+	for (const item of document.querySelectorAll('[data-event-until]')) {
+		const until = item.getAttribute('data-event-until');
+		if (!until) continue;
+		const [year, month, day] = until.split('-').map(Number);
+		const hideFrom = new Date(year, month - 1, day);
+		if (today >= hideFrom) item.remove();
+	}
+
+	const eventsSection = document.getElementById('events');
+	const eventsList = eventsSection?.querySelector('.events-list');
+	if (eventsSection && eventsList && !eventsList.querySelector('.event-item')) {
+		eventsSection.hidden = true;
+		document.querySelector('nav a[href="#events"]')?.remove();
+	}
+
 	const modal = document.querySelector('[data-event-modal]');
 	const image = document.querySelector('[data-event-image]');
 	const caption = document.querySelector('[data-event-caption]');
+	const scrollArea = document.querySelector('[data-event-scroll]');
 	const openButtons = document.querySelectorAll('[data-event-open]');
 	const closeButton = document.querySelector('[data-event-close]');
 
@@ -797,24 +983,44 @@ import Layout from '../layouts/Layout.astro';
 		modal instanceof HTMLDialogElement &&
 		image instanceof HTMLImageElement &&
 		caption instanceof HTMLElement &&
+		scrollArea instanceof HTMLElement &&
 		closeButton
 	) {
+		const resetCaption = () => {
+			scrollArea.scrollTop = 0;
+		};
+
 		for (const button of openButtons) {
 			button.addEventListener('click', () => {
 				const poster = button.getAttribute('data-poster') ?? '';
 				const alt = button.getAttribute('data-poster-alt') ?? '';
-				const text = button.getAttribute('data-caption') ?? '';
+				const captionRef = button.getAttribute('data-caption-ref');
+				const captionTemplate = captionRef
+					? document.getElementById(captionRef)
+					: null;
 				image.src = poster;
 				image.alt = alt;
-				caption.innerHTML = text;
+				if (captionTemplate instanceof HTMLTemplateElement) {
+					caption.replaceChildren(captionTemplate.content.cloneNode(true));
+				} else {
+					caption.innerHTML = button.getAttribute('data-caption') ?? '';
+				}
+				resetCaption();
 				modal.showModal();
 			});
 		}
 
-		closeButton.addEventListener('click', () => modal.close());
-		modal.addEventListener('click', (event) => {
-			if (event.target === modal) modal.close();
+		closeButton.addEventListener('click', () => {
+			modal.close();
+			resetCaption();
 		});
+		modal.addEventListener('click', (event) => {
+			if (event.target === modal) {
+				modal.close();
+				resetCaption();
+			}
+		});
+		modal.addEventListener('close', resetCaption);
 	}
 
 	const classOpenButtons = document.querySelectorAll('[data-class-open]');
