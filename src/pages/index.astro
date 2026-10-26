@@ -10,6 +10,10 @@ import Layout from '../layouts/Layout.astro';
 		<a href="#contacts">контакты</a>
 	</nav>
 
+	<header class="hero">
+		<img src="/hero.jpg?v=2" alt="это студия синдикат" width="1024" height="512" />
+	</header>
+
 	<main>
 		<section id="events">
 			<h2>события</h2>
@@ -21,7 +25,7 @@ import Layout from '../layouts/Layout.astro';
 						data-event-open
 						data-poster="/event-suicide.png"
 						data-poster-alt="театральный клуб — самоубийца"
-						data-caption='читаем по ролям пьесу «самоубийца» н. эрдмана. <a href="https://t.me/syndicat_studio/45">подробнее</a>'
+						data-caption-ref="event-theater-caption"
 						aria-label="театральный клуб"
 					></button>
 					<span class="event-title-line"><span class="event-date">27.10 20:00</span> - театральный клуб</span>
@@ -38,7 +42,7 @@ import Layout from '../layouts/Layout.astro';
 						data-caption-ref="event-scenario-caption"
 						aria-label="сценарная мастерская нины смирновой"
 					></button>
-					<span class="event-title-line"><span class="event-date">31.10</span> - сценарная мастерская нины смирновой, старт курса</span>
+					<span class="event-title-line"><span class="event-date">31.10 18:30</span> - сценарная мастерская нины смирновой, старт курса</span>
 					<span class="event-arrow" aria-hidden="true">→</span>
 					<a class="event-tickets" href="https://t.me/never_ending_adventure">запись</a>
 				</div>
@@ -56,6 +60,26 @@ import Layout from '../layouts/Layout.astro';
 					<span class="event-arrow" aria-hidden="true">→</span>
 					<a class="event-tickets" href="https://qtickets.ru/event/268742">билеты</a>
 				</div>
+				<template id="event-theater-caption">
+					<p>будем читать по ролям пьесу н. эрдмана «самоубийца»</p>
+					<p>вход свободный</p>
+					<p>
+						ссылка на чат вокруг
+						<a href="https://t.me/syndikatlibrarybot">@syndikatlibrarybot</a>:
+						<a href="https://t.me/+8uxiSNFt6OdlYjli">https://t.me/+8uxiSNFt6OdlYjli</a>
+					</p>
+					<p>
+						в нем можно записаться, обсудить планы и по желанию заранее выбрать себе персонажа, за
+						которого будете читать. еще в этом чате будут обсуждаться идеи книжных вечеринок в студии.
+					</p>
+					<p>
+						когда то давно, после ковида, мы собирались с друзьями в циферблате на тверской и читали
+						пьесы, было весело, теперь это будет происходить раз в две недели в студии, ура!
+						присоединяйтесь и зовите друзей
+					</p>
+					<p>еще можно будет в какой-то момент смотреть спектакли и обсуждать их</p>
+					<p><a href="https://t.me/syndicat_studio/51">подробнее</a></p>
+				</template>
 				<template id="event-scenario-caption">
 					<p>
 						курс посвящён сценарной части кинопроцесса. придумыванию идей, подмечанию сюжетов,
@@ -147,13 +171,13 @@ import Layout from '../layouts/Layout.astro';
 				<article class="class-card">
 					<h3>занятия с федей фокиным</h3>
 					<div class="class-card-body">
-						<img src="/class-fedya.jpg?v=4" alt="занятия с федей" width="1024" height="630" loading="lazy" />
+						<img src="/class-fedya.jpg?v=8" alt="занятия с федей" width="1024" height="620" loading="lazy" />
 						<div class="class-card-text">
-							<p>фортепиано, гитара, для начинающих</p>
-							<p>уроки интуитивной импровизации</p>
-							<p>12+</p>
-							<p>3000/час</p>
-							<button type="button" class="class-more" data-class-open="fedya">подробнее</button>
+							<p>фортепиано, гитара, для начинающих<br />уроки интуитивной импровизации</p>
+							<div class="class-card-meta">
+								<p>12+<br />3000/час</p>
+								<button type="button" class="class-more" data-class-open="fedya">подробнее</button>
+							</div>
 						</div>
 					</div>
 				</article>
@@ -162,20 +186,26 @@ import Layout from '../layouts/Layout.astro';
 					<div class="class-card-body">
 						<img src="/class-olya.jpg?v=3" alt="занятия с олей котрелевой" width="1024" height="682" loading="lazy" />
 						<div class="class-card-text">
-							<p>музыка через инструмент (фортепиано, гитара/укулеле, блокфлейта)</p>
-							<p>развитие слуха и сольфеджио для жизни</p>
-							<p>5+</p>
-							<p>3000/час</p>
-							<button type="button" class="class-more" data-class-open="olya">подробнее</button>
+							<p>музыка через инструмент (фортепиано, гитара/укулеле, блокфлейта)<br />развитие слуха и сольфеджио для жизни</p>
+							<div class="class-card-meta">
+								<p>5+<br />3000/час</p>
+								<button type="button" class="class-more" data-class-open="olya">подробнее</button>
+							</div>
 						</div>
 					</div>
 				</article>
-				<article>
+				<article class="class-card">
 					<h3>хор</h3>
-					<p>продолжающие, поем в меру сложно и ковыряемся в многоголосии. для тех, у кого есть похожий опыт в прошлом.</p>
-					<p>14+</p>
-					<p>1500/занятие</p>
-					<a class="write-link" href="https://t.me/olakotr">записаться</a>
+					<div class="class-card-body">
+						<img src="/class-choir.jpg" alt="хор" width="1024" height="768" loading="lazy" />
+						<div class="class-card-text">
+							<p>продолжающие, поем в меру сложно и ковыряемся в многоголосии. для тех, у кого есть похожий опыт в прошлом.</p>
+							<div class="class-card-meta">
+								<p>14+<br />1500/занятие</p>
+								<a class="write-link" href="https://t.me/olakotr">записаться</a>
+							</div>
+						</div>
+					</div>
 				</article>
 			</div>
 		</section>
@@ -186,13 +216,16 @@ import Layout from '../layouts/Layout.astro';
 				<div class="about-carousel-wrap">
 					<div class="about-carousel" data-about-carousel>
 						<figure class="about-slide">
-							<img src="/about-1.jpg" alt="интерьер студии" width="768" height="1024" loading="lazy" />
+							<img src="/about-1.jpg" alt="интерьер студии" width="1024" height="768" loading="lazy" />
 							<div class="about-overlay">
 								<p>СТУДИЯ СИНДИКАТ – это пространство московского музыкального синдиката. сюда можно приходить заниматься искусством.</p>
 							</div>
 						</figure>
 						<figure class="about-slide">
-							<img src="/about-2.jpg" alt="вход в студию" width="768" height="1024" loading="lazy" />
+							<img src="/about-2.jpg" alt="интерьер студии" width="768" height="1024" loading="lazy" />
+						</figure>
+						<figure class="about-slide">
+							<img src="/about-3.jpg" alt="вход в студию" width="768" height="1024" loading="lazy" />
 						</figure>
 					</div>
 					<div class="about-dots" data-about-dots aria-hidden="true"></div>
@@ -230,7 +263,7 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 			<div class="map">
 				<iframe
-					src="https://yandex.ru/map-widget/v1/-/CXRcA48F"
+					src="https://yandex.ru/map-widget/v1/-/CXVtbJLg"
 					title="студия на карте"
 					loading="lazy"
 					allowfullscreen
@@ -265,22 +298,18 @@ import Layout from '../layouts/Layout.astro';
 		right: 0;
 		display: flex;
 		justify-content: center;
-		gap: 28px;
+		gap: 20px;
 		z-index: 2;
+		padding: 12px 16px;
 		font-size: 14px;
-	}
-
-	nav::before {
-		content: '';
-		position: absolute;
-		inset: 0;
-		z-index: -1;
-		backdrop-filter: blur(10px);
-		mask-image: linear-gradient(to bottom, black 0%, rgb(0 0 0 / 0.65) 45%, transparent 100%);
+		pointer-events: none;
 	}
 
 	nav a {
-		padding: 14px 6px;
+		pointer-events: auto;
+		padding: 6px 10px;
+		border-radius: 2px;
+		background: rgb(250 228 212 / 0.88);
 		color: #111;
 		text-align: center;
 		text-decoration: none;
@@ -291,11 +320,45 @@ import Layout from '../layouts/Layout.astro';
 		text-transform: uppercase;
 	}
 
+	.hero {
+		position: relative;
+		width: 100%;
+		margin: 0;
+		line-height: 0;
+		overflow: hidden;
+	}
+
+	.hero img {
+		display: block;
+		width: 100%;
+		height: auto;
+		max-height: min(88vh, 920px);
+		object-fit: cover;
+		object-position: center;
+	}
+
+	.hero::after {
+		content: '';
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		height: min(42%, 220px);
+		background: linear-gradient(
+			to bottom,
+			rgb(250 228 212 / 0) 0%,
+			rgb(250 228 212 / 0.55) 45%,
+			#fae4d4 100%
+		);
+		pointer-events: none;
+	}
+
 	main {
 		position: relative;
 		z-index: 1;
 		min-height: 100vh;
-		padding: 92px 40px 64px;
+		padding: 24px 40px 64px;
+		margin-top: -48px;
 		color: #111;
 		font-family: georgia, 'times new roman', serif;
 	}
@@ -550,7 +613,6 @@ import Layout from '../layouts/Layout.astro';
 	.about-carousel-wrap {
 		position: relative;
 		width: 100%;
-		max-width: 720px;
 		border: 1px solid rgb(17 17 17 / 0.14);
 		box-shadow: 0 12px 40px rgb(0 0 0 / 0.12);
 		overflow: hidden;
@@ -573,13 +635,16 @@ import Layout from '../layouts/Layout.astro';
 		position: relative;
 		flex: 0 0 100%;
 		margin: 0;
+		aspect-ratio: 4 / 3;
+		background: #fae4d4;
 		scroll-snap-align: start;
 	}
 
 	.about-slide img {
 		display: block;
 		width: 100%;
-		height: auto;
+		height: 100%;
+		object-fit: contain;
 	}
 
 	.about-overlay {
@@ -669,54 +734,76 @@ import Layout from '../layouts/Layout.astro';
 	}
 
 	.class-card-body {
-		display: grid;
-		grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-		align-items: stretch;
-		min-height: 280px;
+		position: relative;
+		display: block;
 	}
 
 	.class-card-body img {
 		display: block;
 		width: 100%;
-		height: 100%;
-		object-fit: cover;
-		object-position: center top;
+		height: auto;
 	}
 
 	.class-card h3 {
 		position: absolute;
 		top: 0;
 		left: 0;
-		right: 0;
 		z-index: 1;
+		width: fit-content;
+		max-width: calc(100% - 24px);
 		margin: 0;
-		padding: 14px 20px;
+		padding: 8px 12px;
 		background: rgb(0 0 0 / 0.45);
 		color: #fff;
 	}
 
 	.class-card-text {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1;
 		display: flex;
 		flex-direction: column;
-		justify-content: flex-end;
-		padding: 64px 20px 20px;
+		align-items: stretch;
+		gap: 10px;
+		padding: 8px 8px 8px;
+		background: rgb(0 0 0 / 0.45);
+		color: #fff;
 	}
 
-	.class-card-text p {
-		margin-bottom: 0.4em;
+	.class-card-text > p {
+		margin: 0;
+		color: #fff;
 	}
 
-	.class-card-text p:last-of-type {
-		margin-bottom: 14px;
+	.class-card-meta {
+		display: flex;
+		align-items: flex-end;
+		justify-content: space-between;
+		gap: 16px;
+	}
+
+	.class-card-meta p {
+		margin: 0;
+		color: #fff;
+	}
+
+	.class-card-text .write-link {
+		position: static;
+		right: auto;
+		bottom: auto;
+		flex: 0 0 auto;
+		color: #fff;
 	}
 
 	.class-more {
-		align-self: flex-start;
+		flex: 0 0 auto;
 		margin: 0;
 		padding: 0;
 		border: none;
 		background: none;
-		color: inherit;
+		color: #fff;
 		font: inherit;
 		font-size: 15px;
 		text-decoration: underline;
@@ -853,14 +940,28 @@ import Layout from '../layouts/Layout.astro';
 			gap: 14px;
 		}
 
+		nav {
+			gap: 8px;
+			padding: 10px 12px;
+		}
+
 		nav a {
-			padding: 12px 4px;
+			padding: 5px 7px;
 			font-size: calc(11px + 3pt);
 			letter-spacing: 0.05em;
 		}
 
+		.hero img {
+			max-height: 70vh;
+		}
+
+		.hero::after {
+			height: min(48%, 160px);
+		}
+
 		main {
-			padding: 56px 16px 48px;
+			padding: 16px 16px 48px;
+			margin-top: -36px;
 		}
 
 		.font-credit {
@@ -891,19 +992,6 @@ import Layout from '../layouts/Layout.astro';
 			position: static;
 		}
 
-		.class-card-body {
-			grid-template-columns: 1fr;
-		}
-
-		.class-card-body img {
-			aspect-ratio: 4 / 3;
-			height: auto;
-			max-height: 260px;
-		}
-
-		.class-card-text {
-			padding-top: 20px;
-		}
 	}
 </style>
 
