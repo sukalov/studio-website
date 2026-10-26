@@ -340,6 +340,35 @@ import Layout from '../layouts/Layout.astro';
 		object-position: center;
 		mix-blend-mode: multiply;
 		filter: contrast(0.71) brightness(1.08) saturate(0.95) sepia(0.1) hue-rotate(-6deg);
+		-webkit-mask-image: linear-gradient(
+			to right,
+			transparent 0%,
+			#000 14%,
+			#000 86%,
+			transparent 100%
+		);
+		mask-image: linear-gradient(
+			to right,
+			transparent 0%,
+			#000 14%,
+			#000 86%,
+			transparent 100%
+		);
+	}
+
+	.hero::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+		pointer-events: none;
+		background: linear-gradient(
+			to right,
+			#fdf1e6 0%,
+			rgb(253 241 230 / 0) 18%,
+			rgb(253 241 230 / 0) 82%,
+			#fdf1e6 100%
+		);
 	}
 
 	.hero::after {
@@ -348,7 +377,7 @@ import Layout from '../layouts/Layout.astro';
 		left: 0;
 		right: 0;
 		bottom: 0;
-		z-index: 1;
+		z-index: 2;
 		height: min(55%, 160px);
 		background: linear-gradient(
 			to bottom,
@@ -943,10 +972,6 @@ import Layout from '../layouts/Layout.astro';
 
 	@media (max-width: 760px) {
 		nav {
-			gap: 14px;
-		}
-
-		nav {
 			gap: 8px;
 			padding: 10px 12px;
 		}
@@ -958,36 +983,55 @@ import Layout from '../layouts/Layout.astro';
 		}
 
 		.hero::after {
-			height: min(60%, 120px);
+			height: min(50%, 100px);
 		}
 
 		main {
-			padding: 8px 16px 48px;
-			margin-top: -28px;
+			padding: 28px 16px 40px;
+			margin-top: -8px;
 		}
 
 		.font-credit {
-			padding: 0 16px 20px;
+			padding: 0 16px 16px;
 		}
 
 		#events {
-			padding-top: 0;
-		}
-
-		section {
-			gap: 10px;
-		}
-
-		section > h2 {
-			margin-bottom: 0;
+			padding-top: 20px;
 		}
 
 		section {
 			grid-template-columns: 1fr;
+			gap: 8px;
+			margin-bottom: 40px;
+			padding-top: 8px;
+		}
+
+		section > h2 {
+			margin-bottom: 4px;
 		}
 
 		section > *:not(h2) {
 			grid-column: auto;
+		}
+
+		.events-list {
+			gap: 6px;
+		}
+
+		.event-item {
+			padding: 12px 14px;
+		}
+
+		#classes .text article {
+			padding-bottom: 20px;
+		}
+
+		.about-more {
+			margin-top: 10px;
+		}
+
+		.residents {
+			margin-top: 14px;
 		}
 
 		h2 {
