@@ -11,7 +11,7 @@ import Layout from '../layouts/Layout.astro';
 	</nav>
 
 	<header class="hero">
-		<img src="/hero.jpg?v=5" alt="это студия синдикат" width="1024" height="342" />
+		<img src="/hero.jpg?v=6" alt="это студия синдикат" width="1024" height="401" />
 	</header>
 
 	<main>
@@ -335,6 +335,16 @@ import Layout from '../layouts/Layout.astro';
 		max-height: min(88vh, 920px);
 		object-fit: cover;
 		object-position: center;
+		filter: brightness(1.22) contrast(1.03) saturate(1.04);
+	}
+
+	.hero::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: 1;
+		background: rgb(255 252 245 / 0.16);
+		pointer-events: none;
 	}
 
 	.hero::after {
@@ -343,6 +353,7 @@ import Layout from '../layouts/Layout.astro';
 		left: 0;
 		right: 0;
 		bottom: 0;
+		z-index: 2;
 		height: min(42%, 220px);
 		background: linear-gradient(
 			to bottom,
