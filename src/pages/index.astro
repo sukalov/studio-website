@@ -11,7 +11,7 @@ import Layout from '../layouts/Layout.astro';
 	</nav>
 
 	<header class="hero">
-		<img src="/hero.jpg?v=6" alt="это студия синдикат" width="1024" height="401" />
+		<img src="/hero.jpg?v=10" alt="студия синдикат" width="1014" height="278" />
 	</header>
 
 	<main>
@@ -307,9 +307,9 @@ import Layout from '../layouts/Layout.astro';
 
 	nav a {
 		pointer-events: auto;
-		padding: 6px 10px;
-		border-radius: 2px;
-		background: rgb(250 228 212 / 0.88);
+		padding: 1px 3px;
+		border-radius: 1px;
+		background: rgb(250 228 212 / 0.44);
 		color: #111;
 		text-align: center;
 		text-decoration: none;
@@ -324,27 +324,22 @@ import Layout from '../layouts/Layout.astro';
 		position: relative;
 		width: 100%;
 		margin: 0;
+		padding: 0;
 		line-height: 0;
 		overflow: hidden;
+		background: #fdf1e6;
 	}
 
 	.hero img {
 		display: block;
-		width: 100%;
+		width: min(100%, 1100px);
+		max-height: none;
 		height: auto;
-		max-height: min(88vh, 920px);
-		object-fit: cover;
+		margin: 0 auto;
+		object-fit: contain;
 		object-position: center;
-		filter: brightness(1.22) contrast(1.03) saturate(1.04);
-	}
-
-	.hero::before {
-		content: '';
-		position: absolute;
-		inset: 0;
-		z-index: 1;
-		background: rgb(255 252 245 / 0.16);
-		pointer-events: none;
+		mix-blend-mode: multiply;
+		filter: contrast(0.71) brightness(1.08) saturate(0.95) sepia(0.1) hue-rotate(-6deg);
 	}
 
 	.hero::after {
@@ -353,12 +348,12 @@ import Layout from '../layouts/Layout.astro';
 		left: 0;
 		right: 0;
 		bottom: 0;
-		z-index: 2;
-		height: min(42%, 220px);
+		z-index: 1;
+		height: min(55%, 160px);
 		background: linear-gradient(
 			to bottom,
-			rgb(250 228 212 / 0) 0%,
-			rgb(250 228 212 / 0.55) 45%,
+			rgb(253 241 230 / 0) 0%,
+			rgb(250 228 212 / 0.45) 40%,
 			#fae4d4 100%
 		);
 		pointer-events: none;
@@ -368,8 +363,8 @@ import Layout from '../layouts/Layout.astro';
 		position: relative;
 		z-index: 1;
 		min-height: 100vh;
-		padding: 24px 40px 64px;
-		margin-top: -48px;
+		padding: 8px 40px 64px;
+		margin-top: -40px;
 		color: #111;
 		font-family: georgia, 'times new roman', serif;
 	}
@@ -957,22 +952,18 @@ import Layout from '../layouts/Layout.astro';
 		}
 
 		nav a {
-			padding: 5px 7px;
+			padding: 1px 2px;
 			font-size: calc(11px + 3pt);
 			letter-spacing: 0.05em;
 		}
 
-		.hero img {
-			max-height: 70vh;
-		}
-
 		.hero::after {
-			height: min(48%, 160px);
+			height: min(60%, 120px);
 		}
 
 		main {
-			padding: 16px 16px 48px;
-			margin-top: -36px;
+			padding: 8px 16px 48px;
+			margin-top: -28px;
 		}
 
 		.font-credit {
