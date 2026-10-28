@@ -165,6 +165,17 @@ import Layout from '../layouts/Layout.astro';
 			</div>
 		</dialog>
 
+		<dialog class="class-modal" data-class-modal="tolya">
+			<button type="button" class="class-modal-close" data-class-close aria-label="закрыть">×</button>
+			<div class="class-modal-body">
+				<p>занятия гитарой и бас-гитарой</p>
+				<p>
+					занятия проходят в свободной форме по системе мастеров, у которых толя сам когда-то учился,
+					включают помимо самой гитары базовую теорию и ритмические упражнения
+				</p>
+			</div>
+		</dialog>
+
 		<section id="classes">
 			<h2>занятия</h2>
 			<div class="text">
@@ -176,7 +187,10 @@ import Layout from '../layouts/Layout.astro';
 							<p>фортепиано, гитара, для начинающих<br />уроки интуитивной импровизации</p>
 							<div class="class-card-meta">
 								<p>12+<br />3000/час</p>
-								<button type="button" class="class-more" data-class-open="fedya">подробнее</button>
+								<span class="class-card-actions">
+									<button type="button" class="class-more" data-class-open="fedya">подробнее</button>
+									<a class="write-link" href="https://t.me/motygapishet">запись</a>
+								</span>
 							</div>
 						</div>
 					</div>
@@ -189,7 +203,26 @@ import Layout from '../layouts/Layout.astro';
 							<p>музыка через инструмент (фортепиано, гитара/укулеле, блокфлейта)<br />развитие слуха и сольфеджио для жизни</p>
 							<div class="class-card-meta">
 								<p>5+<br />3000/час</p>
-								<button type="button" class="class-more" data-class-open="olya">подробнее</button>
+								<span class="class-card-actions">
+									<button type="button" class="class-more" data-class-open="olya">подробнее</button>
+									<a class="write-link" href="https://t.me/olakotr">запись</a>
+								</span>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article class="class-card">
+					<h3>занятия с толей яцковым</h3>
+					<div class="class-card-body">
+						<img src="/class-tolya.jpg" alt="занятия с толей яцковым" width="1024" height="682" loading="lazy" />
+						<div class="class-card-text">
+							<p>гитара, бас-гитара</p>
+							<div class="class-card-meta">
+								<p>14+<br />3000/час — индивидуально<br />1500/час — группа</p>
+								<span class="class-card-actions">
+									<button type="button" class="class-more" data-class-open="tolya">подробнее</button>
+									<a class="write-link" href="https://t.me/yatskovanatoly">запись</a>
+								</span>
 							</div>
 						</div>
 					</div>
@@ -783,6 +816,13 @@ import Layout from '../layouts/Layout.astro';
 		display: block;
 		width: 100%;
 		height: auto;
+	}
+
+	.class-card-actions {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		gap: 4px;
 	}
 
 	.class-card h3 {
