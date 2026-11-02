@@ -18,7 +18,11 @@ import Layout from '../layouts/Layout.astro';
 		<section id="events">
 			<h2>события</h2>
 			<div class="text events-list">
-				<div class="event-item" data-event-until="2026-10-28">
+				<div
+					class="event-item event-item--afisha"
+					style="--event-poster: url('/event-suicide.png')"
+					data-event-until="2026-10-28"
+				>
 					<button
 						type="button"
 						class="event-hit"
@@ -32,7 +36,11 @@ import Layout from '../layouts/Layout.astro';
 					<span class="event-arrow" aria-hidden="true">→</span>
 					<span class="event-meta">вход свободный</span>
 				</div>
-				<div class="event-item" data-event-until="2026-11-01">
+				<div
+					class="event-item event-item--afisha"
+					style="--event-poster: url('/event-scenario-1.jpg')"
+					data-event-until="2026-11-01"
+				>
 					<button
 						type="button"
 						class="event-hit"
@@ -46,7 +54,11 @@ import Layout from '../layouts/Layout.astro';
 					<span class="event-arrow" aria-hidden="true">→</span>
 					<a class="event-tickets" href="https://t.me/never_ending_adventure">запись</a>
 				</div>
-				<div class="event-item" data-event-until="2026-11-02">
+				<div
+					class="event-item event-item--afisha"
+					style="--event-poster: url('/event-swim.jpg?v=2')"
+					data-event-until="2026-11-02"
+				>
 					<button
 						type="button"
 						class="event-hit"
@@ -60,7 +72,11 @@ import Layout from '../layouts/Layout.astro';
 					<span class="event-arrow" aria-hidden="true">→</span>
 					<a class="event-tickets" href="https://qtickets.ru/event/268742">билеты</a>
 				</div>
-				<div class="event-item" data-event-until="2026-11-04">
+				<div
+					class="event-item event-item--afisha"
+					style="--event-poster: url('/event-cinema.jpg')"
+					data-event-until="2026-11-04"
+				>
 					<button
 						type="button"
 						class="event-hit"
@@ -74,8 +90,23 @@ import Layout from '../layouts/Layout.astro';
 					<span class="event-arrow" aria-hidden="true">→</span>
 					<span class="event-meta">вход свободный</span>
 				</div>
-				<div class="event-item event-item--plain" data-event-until="2026-11-09">
+				<div
+					class="event-item event-item--afisha"
+					style="--event-poster: url('/event-voobrazhuli.jpg')"
+					data-event-until="2026-11-09"
+				>
+					<button
+						type="button"
+						class="event-hit"
+						data-event-open
+						data-poster="/event-voobrazhuli.jpg"
+						data-poster-alt="воображули х московский музыкальный синдикат"
+						data-caption-ref="event-voobrazhuli-caption"
+						aria-label="воображули+московский музыкальный синдикат"
+					></button>
 					<span class="event-title-line"><span class="event-date">8.11 20:00</span> - воображули+московский музыкальный синдикат (вечер рисования и музыки)</span>
+					<span class="event-arrow" aria-hidden="true">→</span>
+					<a class="event-tickets" href="https://qtickets.ru/event/271264">регистрация</a>
 				</div>
 				<div class="event-item event-item--plain" data-event-until="2026-11-10">
 					<span class="event-title-line"><span class="event-date">9.11 20:00</span> - практикум: максим беженов</span>
@@ -145,6 +176,30 @@ import Layout from '../layouts/Layout.astro';
 						эхо маркса, гамсуна и фрейда.
 					</p>
 					<p>вход свободный</p>
+				</template>
+				<template id="event-voobrazhuli-caption">
+					<p>8 ноября воображули х московский музыкальный синдикат в студии!</p>
+					<p>
+						воображули — это рисовальный воркшоп-игра, задача со слов рисовать разные произведения
+						искусства
+					</p>
+					<p>проходит так:</p>
+					<p>
+						ведущий описывает картину, все рисуют, в это время играет московский музыкальный синдикат,
+						когда заканчивается отведенное время, показывается загаданный оригинал
+					</p>
+					<p>
+						в студии будут материалы и бумага, но всегда приятнее рисовать своим, не лишайте себя этого
+						удовольствия. также полезно взять что-то твердое, чтобы подложить в качестве планшета под
+						бумагу
+					</p>
+					<p>начало в 20:00</p>
+					<p>
+						а еще можно будет трансляция на <a href="https://radioznb.ru">radioznb.ru</a>: рисуйте дома и присылайте картинки в чат
+					</p>
+					<p>
+						<a class="event-tickets" href="https://qtickets.ru/event/271264">регистрация</a>
+					</p>
 				</template>
 				<template id="event-swim-caption">
 					<p>1 ноября первый заплыв с лизой плавинской в студии!</p>
@@ -541,6 +596,8 @@ import Layout from '../layouts/Layout.astro';
 		column-gap: 16px;
 		row-gap: 4px;
 		padding: 18px 20px;
+		overflow: hidden;
+		isolation: isolate;
 		border: 1px solid rgb(17 17 17 / 0.14);
 		background: rgb(255 250 239 / 0.84);
 		box-shadow: 0 12px 40px rgb(0 0 0 / 0.12);
@@ -550,8 +607,41 @@ import Layout from '../layouts/Layout.astro';
 		line-height: 1.35;
 	}
 
+	.event-item--afisha {
+		background: transparent;
+	}
+
+	.event-item--afisha::before {
+		content: '';
+		position: absolute;
+		inset: -28px;
+		z-index: 0;
+		background-image: var(--event-poster);
+		background-size: cover;
+		background-position: center;
+		filter: blur(18px);
+		pointer-events: none;
+	}
+
+	.event-item--afisha::after {
+		content: '';
+		position: absolute;
+		inset: 0;
+		z-index: 0;
+		background: rgb(255 250 239 / 0.72);
+		pointer-events: none;
+	}
+
 	.event-item:hover {
 		background: rgb(255 250 239 / 0.96);
+	}
+
+	.event-item--afisha:hover {
+		background: transparent;
+	}
+
+	.event-item--afisha:hover::after {
+		background: rgb(255 250 239 / 0.82);
 	}
 
 	.event-item--plain .event-title-line {
@@ -588,7 +678,11 @@ import Layout from '../layouts/Layout.astro';
 
 	.event-arrow {
 		grid-column: 2;
-		grid-row: 1;
+		grid-row: 1 / -1;
+		align-self: center;
+		font-size: 2em;
+		font-weight: 700;
+		line-height: 1;
 	}
 
 	.event-meta,
@@ -637,6 +731,12 @@ import Layout from '../layouts/Layout.astro';
 		max-height: 92vh;
 	}
 
+	.event-modal.is-text-only {
+		max-width: min(92vw, 560px);
+		background: rgb(255 250 239);
+		box-shadow: 0 12px 40px rgb(0 0 0 / 0.24);
+	}
+
 	.event-modal::backdrop {
 		background: rgb(0 0 0 / 0.72);
 	}
@@ -646,10 +746,43 @@ import Layout from '../layouts/Layout.astro';
 		background: #2f3d55;
 	}
 
+	.event-modal.is-text-only .event-modal-poster {
+		background: transparent;
+	}
+
 	.event-modal-poster img {
 		display: block;
 		width: 100%;
 		height: auto;
+	}
+
+	.event-modal.is-text-only .event-modal-poster img {
+		display: none;
+	}
+
+	.event-modal.is-text-only .event-modal-scroll {
+		position: relative;
+		max-height: 85vh;
+	}
+
+	.event-modal.is-text-only .event-modal-spacer {
+		display: none;
+	}
+
+	.event-modal.is-text-only .event-modal-caption {
+		background: transparent;
+		color: #111;
+		min-height: auto;
+		padding: 28px 24px 24px;
+		font-size: 19px;
+	}
+
+	.event-modal.is-text-only .event-modal-caption :global(a) {
+		color: inherit;
+	}
+
+	.event-modal.is-text-only .event-modal-close {
+		color: #111;
 	}
 
 	.event-modal-scroll {
@@ -1284,17 +1417,40 @@ import Layout from '../layouts/Layout.astro';
 				const captionTemplate = captionRef
 					? document.getElementById(captionRef)
 					: null;
-				image.src = poster;
-				image.alt = alt;
+				if (poster) {
+					image.src = poster;
+					image.alt = alt;
+					image.hidden = false;
+					modal.classList.remove('is-text-only');
+				} else {
+					image.removeAttribute('src');
+					image.alt = '';
+					image.hidden = true;
+					modal.classList.add('is-text-only');
+				}
 				if (captionTemplate instanceof HTMLTemplateElement) {
 					caption.replaceChildren(captionTemplate.content.cloneNode(true));
 				} else {
 					caption.innerHTML = button.getAttribute('data-caption') ?? '';
 				}
+				(
+					window as Window & { qTickets?: { init?: () => void } }
+				).qTickets?.init?.();
+
 				resetCaption();
 				modal.showModal();
 			});
 		}
+
+		caption.addEventListener('click', (event) => {
+			const target = event.target;
+			if (!(target instanceof Element)) return;
+			const link = target.closest('a');
+			if (!(link instanceof HTMLAnchorElement)) return;
+			if (!link.href.includes('qtickets.ru')) return;
+			modal.close();
+			resetCaption();
+		});
 
 		closeButton.addEventListener('click', () => {
 			modal.close();
