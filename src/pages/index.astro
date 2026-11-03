@@ -124,7 +124,7 @@ import Layout from '../layouts/Layout.astro';
 					></button>
 					<span class="event-title-line"><span class="event-date">9.11 20:00</span> - практикум с максом беженовым: рамки и хрумки</span>
 					<span class="event-arrow" aria-hidden="true">→</span>
-					<a class="event-tickets" href="https://t.me/motygapishet">запись</a>
+					<span class="event-tickets">900 рублей - <a href="https://t.me/motygapishet">запись</a></span>
 				</div>
 				<template id="event-theater-caption">
 					<p>будем читать по ролям пьесу н. эрдмана «самоубийца»</p>
@@ -734,6 +734,17 @@ import Layout from '../layouts/Layout.astro';
 	.event-tickets {
 		position: relative;
 		z-index: 2;
+		text-decoration: underline;
+		text-underline-offset: 0.18em;
+		color: inherit;
+	}
+
+	span.event-tickets {
+		text-decoration: none;
+	}
+
+	span.event-tickets a {
+		color: inherit;
 		text-decoration: underline;
 		text-underline-offset: 0.18em;
 	}
