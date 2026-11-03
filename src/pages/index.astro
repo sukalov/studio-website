@@ -108,8 +108,23 @@ import Layout from '../layouts/Layout.astro';
 					<span class="event-arrow" aria-hidden="true">→</span>
 					<a class="event-tickets" href="https://qtickets.ru/event/271264">регистрация</a>
 				</div>
-				<div class="event-item event-item--plain" data-event-until="2026-11-10">
-					<span class="event-title-line"><span class="event-date">9.11 20:00</span> - практикум: максим беженов</span>
+				<div
+					class="event-item event-item--afisha"
+					style="--event-poster: url('/event-practicum.jpg')"
+					data-event-until="2026-11-10"
+				>
+					<button
+						type="button"
+						class="event-hit"
+						data-event-open
+						data-poster="/event-practicum.jpg"
+						data-poster-alt="практикум с максом беженовым: рамки и хрумки"
+						data-caption-ref="event-practicum-caption"
+						aria-label="практикум с максом беженовым: рамки и хрумки"
+					></button>
+					<span class="event-title-line"><span class="event-date">9.11 20:00</span> - практикум с максом беженовым: рамки и хрумки</span>
+					<span class="event-arrow" aria-hidden="true">→</span>
+					<a class="event-tickets" href="https://t.me/motygapishet">запись</a>
 				</div>
 				<template id="event-theater-caption">
 					<p>будем читать по ролям пьесу н. эрдмана «самоубийца»</p>
@@ -176,6 +191,32 @@ import Layout from '../layouts/Layout.astro';
 						эхо маркса, гамсуна и фрейда.
 					</p>
 					<p>вход свободный</p>
+				</template>
+				<template id="event-practicum-caption">
+					<p>практикум с максом беженовым: рамки и хрумки</p>
+					<p>
+						здравствуйте, меня зовут макс беженов, и за последние три месяца моё творчество увидело и
+						услышало более миллиона человек по всему миру. я играю на саксофоне, параллельно кричу,
+						кряхтю, стону, смеюсь и плачу. и пусть формат коротких видео в 📸 это не собирание больших
+						концертных залов, мне все равно есть чем с вами поделиться. мои наблюдения обо всём об
+						этом помогут и саксофонистам и просто музыкантам и вообще будет довольно классный
+						практикум, приходите)
+					</p>
+					<p>особенно если вам интересен фри-джаз 😘</p>
+					<p>участие — 900 рублей</p>
+					<p>
+						запись в лс
+						<a href="https://t.me/motygapishet">@motygapishet</a>
+						или в сообщениях этого канала
+					</p>
+					<p>количество мест ограничено</p>
+					<p>
+						практикум в студии — тематическая встреча музыкантов с музыкантами, можно принести свой
+						инструмент, будем обсуждать и делать
+					</p>
+					<p>
+						<a class="event-tickets" href="https://t.me/motygapishet">запись</a>
+					</p>
 				</template>
 				<template id="event-voobrazhuli-caption">
 					<p>8 ноября воображули х московский музыкальный синдикат в студии!</p>
