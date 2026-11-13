@@ -144,6 +144,62 @@ import Layout from '../layouts/Layout.astro';
 					<span class="event-arrow" aria-hidden="true">→</span>
 					<span class="event-tickets">вход свободный - <a href="https://t.me/olakotr">запись</a></span>
 				</div>
+				<div
+					class="event-item event-item--afisha"
+					style="--event-poster: url('/event-konnakol.jpg')"
+					data-event-until="2026-11-17"
+				>
+					<button
+						type="button"
+						class="event-hit"
+						data-event-open
+						data-poster="/event-konnakol.jpg"
+						data-poster-alt="практикум: коннакол с олей желябиной"
+						data-caption-ref="event-konnakol-caption"
+						aria-label="практикум: коннакол"
+					></button>
+					<span class="event-title-line"><span class="event-date">16.11 20:00</span> - практикум: коннакол</span>
+					<span class="event-arrow" aria-hidden="true">→</span>
+					<span class="event-meta">900 рублей</span>
+				</div>
+				<div
+					class="event-item event-item--afisha event-item--plain"
+					style="--event-poster: url('/event-cinema.jpg')"
+					data-event-until="2026-11-18"
+				>
+					<span class="event-title-line"><span class="event-date">17.11 20:00</span> - живое кино: роом «третья мещанская»</span>
+					<span class="event-meta">800 рублей</span>
+				</div>
+				<div
+					class="event-item event-item--afisha event-item--plain"
+					style="--event-poster: url('/event-fabrika.jpg')"
+					data-event-until="2026-11-25"
+				>
+					<span class="event-title-line"><span class="event-date">24.11 19:30</span> - театральный клуб</span>
+					<span class="event-meta">вход свободный</span>
+				</div>
+				<div
+					class="event-item event-item--afisha event-item--plain"
+					style="--event-poster: url('/event-godard.webp')"
+					data-event-until="2026-12-01"
+				>
+					<span class="event-title-line"><span class="event-date">30.11 20:00</span> - аналитический киноклуб: годар «мужское и женское»</span>
+					<span class="event-meta">500 рублей</span>
+				</div>
+				<template id="event-konnakol-caption">
+					<p>практикум с барабанщицей олей желябиной</p>
+					<p>
+						тема встречи — коннакол, традиционное индийское искусство ритмического пения, иными словами
+						вокальная перкуссия.
+					</p>
+					<p>
+						оля расскажет и покажет что такое коннакол, его история, его значение и применение в музыке
+						на практике.
+					</p>
+					<p>16 ноября</p>
+					<p>20:00</p>
+					<p>участие — 900 рублей</p>
+				</template>
 				<template id="event-fabrika-caption">
 					<p>10 ноября вторник</p>
 					<p>театральный клуб</p>
@@ -1489,6 +1545,14 @@ import Layout from '../layouts/Layout.astro';
 			scrollArea.scrollTop = 0;
 		};
 
+		const resetCaptionAfterOpen = () => {
+			resetCaption();
+			requestAnimationFrame(() => {
+				resetCaption();
+				requestAnimationFrame(resetCaption);
+			});
+		};
+
 		for (const button of openButtons) {
 			button.addEventListener('click', () => {
 				const poster = button.getAttribute('data-poster') ?? '';
@@ -1517,8 +1581,15 @@ import Layout from '../layouts/Layout.astro';
 					window as Window & { qTickets?: { init?: () => void } }
 				).qTickets?.init?.();
 
-				resetCaption();
 				modal.showModal();
+				resetCaptionAfterOpen();
+				if (poster) {
+					if (image.complete) {
+						resetCaptionAfterOpen();
+					} else {
+						image.addEventListener('load', resetCaptionAfterOpen, { once: true });
+					}
+				}
 			});
 		}
 
